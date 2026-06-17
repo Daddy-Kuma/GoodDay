@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d4f3c" />
+    <title>世界杯积分竞猜</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">世界杯模拟竞彩</p>
+          <h1>积分竞猜</h1>
+        </div>
+        <button class="icon-button" id="syncButton" aria-label="同步赛程与赔率">
+          <span aria-hidden="true">↻</span>
+        </button>
+      </header>
+
+      <section class="status-strip" aria-label="账户状态">
+        <div>
+          <span>当前积分</span>
+          <strong id="pointsBalance">10000</strong>
+        </div>
+        <div>
+          <span>未结算</span>
+          <strong id="openTicketCount">0</strong>
+        </div>
+        <div>
+          <span>同步时间</span>
+          <strong id="syncTime">--:--</strong>
+        </div>
+      </section>
+
+      <section class="notice">
+        <strong>官方赔率同步</strong>
+        <span>比分赔率来自中国体育彩票官方 Web API，经本地服务端代理同步；虚拟积分无充值、无提现、无实物兑换。</span>
+      </section>
+
+      <nav class="tabs" aria-label="主要视图">
+        <button class="tab active" data-view="matches">赛程</button>
+        <button class="tab" data-view="ticket">竞猜单</button>
+        <button class="tab" data-view="rank">排行</button>
+      </nav>
+
+      <section class="view active" id="matchesView">
+        <div class="section-title">
+          <h2>今日比赛</h2>
+          <span id="sourceLabel">示例数据源</span>
+        </div>
+        <div class="match-list" id="matchList"></div>
+      </section>
+
+      <section class="view" id="ticketView">
+        <div class="section-title">
+          <h2>我的竞猜</h2>
+          <span>按投注时赔率快照结算</span>
+        </div>
+        <div class="ticket-list" id="ticketList"></div>
+      </section>
+
+      <section class="view" id="rankView">
+        <div class="section-title">
+          <h2>赛季榜</h2>
+          <span>积分荣誉榜</span>
+        </div>
+        <div class="rank-list" id="rankList"></div>
+      </section>
+    </main>
+
+    <dialog class="bet-dialog" id="betDialog">
+      <form method="dialog" class="bet-panel">
+        <header>
+          <div>
+            <p class="eyebrow">比分竞猜</p>
+            <h2 id="dialogTitle">比赛</h2>
+          </div>
+          <button class="icon-button" value="cancel" aria-label="关闭">×</button>
+        </header>
+
+        <div class="deadline" id="dialogDeadline"></div>
+        <div class="score-grid" id="scoreGrid"></div>
+
+        <label class="stake-box">
+          <span>投入积分</span>
+          <input id="stakeInput" type="number" min="100" max="2000" step="100" value="500" />
+        </label>
+
+        <div class="selection-card" id="selectionCard">
+          请选择一个比分
+        </div>
+
+        <button class="primary-button" id="confirmBet" value="default">确认模拟竞猜</button>
+      </form>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

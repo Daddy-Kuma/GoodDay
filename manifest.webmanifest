@@ -1,0 +1,16 @@
+{
+  "name": "世界杯积分竞猜",
+  "short_name": "积分竞猜",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbfdfb",
+  "theme_color": "#0d4f3c",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
