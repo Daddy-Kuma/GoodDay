@@ -51,7 +51,7 @@ curl http://127.0.0.1:8081/health
 Render、Railway、Fly.io 等能运行 Node 服务的平台都可以部署这个目录。启动命令：
 
 ```bash
-npm start
+npm run start:local
 ```
 
 健康检查路径：

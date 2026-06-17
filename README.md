@@ -5,7 +5,7 @@
 ## 运行
 
 ```bash
-npm start
+npm run start:local
 ```
 
 默认地址：

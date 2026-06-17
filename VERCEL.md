@@ -34,6 +34,8 @@ Install Command: 留空或 npm install
 
 如果你只上传了 `worldcup-odds-pwa` 这个目录本身作为仓库根目录，则 Root Directory 留空。
 
+不要设置 Start Command。Vercel 不是用 `node server.js` 长驻运行这个项目，而是用根目录静态文件 + `api/*.js` Serverless Functions。
+
 ## 4. 环境变量
 
 通常不用填。可选：
